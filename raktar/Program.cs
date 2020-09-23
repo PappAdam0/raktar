@@ -9,10 +9,21 @@ namespace raktar
 {
     class Program
     {
+        static void BeolvasRaktar()
+        {
+            StreamReader raktar = new StreamReader("raktar.csv");
+            while (!raktar.EndOfStream)
+            {
+                string[] sor = raktar.ReadLine().Split(';');
+                
+            }
+
+
+            raktar.Close();
+        }
         static void Main(string[] args)
         {
-            termek t = new termek("P0","Polo XXL",1500,10);
-            Console.WriteLine($"{t.KOD} - {t.NEV} - {t.AR} - {t.DB}");
+            BeolvasRaktar();
 
 
             Console.ReadKey();
