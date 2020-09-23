@@ -9,13 +9,15 @@ namespace raktar
 {
     class Program
     {
+        static List<termek> termekek = new List<termek>();
         static void BeolvasRaktar()
         {
             StreamReader raktar = new StreamReader("raktar.csv");
+
             while (!raktar.EndOfStream)
             {
                 string[] sor = raktar.ReadLine().Split(';');
-                
+                termekek.Add(new termek(sor[0], sor[1], int.Parse(sor[2]), int.Parse(sor[3])));
             }
 
 
