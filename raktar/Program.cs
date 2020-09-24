@@ -26,7 +26,10 @@ namespace raktar
         static void Main(string[] args)
         {
             BeolvasRaktar();
-
+            foreach (var t in termekek)
+            {
+                Console.WriteLine(t.NEV);
+            }
 
             Console.ReadKey();
         }
