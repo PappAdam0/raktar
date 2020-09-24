@@ -13,14 +13,14 @@ namespace raktar
         static void BeolvasRaktar()
         {
             StreamReader raktar = new StreamReader("raktar.csv");
+            
 
             while (!raktar.EndOfStream)
             {
                 string[] sor = raktar.ReadLine().Split(';');
-                termekek.Add(new termek(sor[0], sor[1], int.Parse(sor[2]), int.Parse(sor[3])));
+                termek t = new termek(sor[0], sor[1], int.Parse(sor[2]), int.Parse(sor[3]));
+                termekek.Add(t);
             }
-
-
             raktar.Close();
         }
         static void Main(string[] args)
