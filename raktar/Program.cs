@@ -31,16 +31,22 @@ namespace raktar
             while (!rendeles.EndOfStream)
 
             {
+
+                string sor = rendeles.ReadLine();
+                string[] adat = sor.Split(';');
+
                 
-                string[] sor = rendeles.ReadLine().Split(';');
-                
-                if (sor[0] == "M")
+                if (adat[0] == "M")
                 {
-                    megrendeles m = new megrendeles(sor[1], sor[2], sor[3]);
+                    megrendeles m = new megrendeles(adat[1], adat[2], adat[3]);
                     megrendelesek.Add(m);
                 }
-               
-               
+                else
+                {
+                    //megrendelesek[megrendelesek.Count - 1].tetelek.Add(sor);
+                    megrendelesek[megrendelesek.Count - 1].TetelHozzaad(adat[2], int.Parse(adat[3]));
+
+                }
 
             }
             rendeles.Close();
