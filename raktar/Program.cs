@@ -49,6 +49,12 @@ namespace raktar
                 }
 
             }
+
+            foreach (var m in megrendelesek)
+            {
+                m.Szamolas(termekek);
+            }
+
             rendeles.Close();
             
         }
